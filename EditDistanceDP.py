@@ -11,7 +11,7 @@ def edit_distanceDP(s1, s2):
             elif j==0:
                 table[i][j]=i
             elif s1[i-1] == s2[j-1]:
-                table[i][j]=table[i-1][j-1]
+                table[i][j]=min(table[i-1][j-1], 1+table[i-1][j], 1+table[i][j-1])
             else:
                 table[i][j] = 1 + min(table[i-1][j],
                                  table[i][j-1],
